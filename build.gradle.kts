@@ -22,7 +22,7 @@ configurations {
 sonar {
     properties {
         property("sonar.projectKey", "smartandhandsome_github-actions")
-        property("sonar.organization", "sangmin-park")
+        property("sonar.organization", "smartandhandsome")
         property("sonar.host.url", "https://sonarcloud.io")
     }
 }
