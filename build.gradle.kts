@@ -24,7 +24,7 @@ sonar {
         property("sonar.projectKey", "smartandhandsome_github-actions")
         property("sonar.organization", "smartandhandsome")
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.coverage.jacoco.xmlReportPaths", "${project.rootDir}/reports/jacoco/test/jacocoTestReport.xml")
+        property("sonar.coverage.jacoco.xmlReportPaths", "${project.rootDir}/build/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
 
