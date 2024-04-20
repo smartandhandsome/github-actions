@@ -24,9 +24,9 @@ sonar {
         property("sonar.projectKey", "smartandhandsome_github-actions")
         property("sonar.organization", "sangmin-park")
         property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.coverage.jacoco.xmlReportPaths", "${project.rootDir}/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
-
 
 repositories {
     mavenCentral()
@@ -43,4 +43,14 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required = true
+    }
 }
