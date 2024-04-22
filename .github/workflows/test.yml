@@ -1,4 +1,4 @@
-name: Deploy to AWS ECR
+name: test
 on:
   push:
     branches:
@@ -6,12 +6,12 @@ on:
 jobs:
   build:
     name: Deploy
+    env:
+      GOOD: sangmin is good man
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          token: ${{ secrets.ACTION_TOKEN }}
+      - name: Print environment variable
+        run: echo $GOOD
 
       - name: Print environment variable
         env:
