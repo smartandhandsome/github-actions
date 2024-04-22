@@ -1,0 +1,22 @@
+name: Deploy to AWS ECR
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.ACTION_TOKEN }}
+
+      - name: Print environment variable
+        env:
+          GREETING: Hello, world!
+        run: echo $GREETING
+
+      - name: Print environment variable2
+        run: echo $GREETING
